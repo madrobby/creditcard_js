@@ -70,6 +70,6 @@ var CreditCard = {
 };
 
 for(card in CreditCard.CARDS)
-  CreditCard['is'+card] = function(number){
+  CreditCard['is'+card] = function(card, number){
     return CreditCard.CARDS[card].test(CreditCard.strip(number));
-  };
+  }.curry(card);
