@@ -69,7 +69,9 @@ var CreditCard = {
   }
 };
 
-for(card in CreditCard.CARDS)
-  CreditCard['is'+card] = function(card, number){
-    return CreditCard.CARDS[card].test(CreditCard.strip(number));
-  }.curry(card);
+(function(){
+  for(var card in CreditCard.CARDS)
+    CreditCard['is'+card] = function(card, number){
+      return CreditCard.CARDS[card].test(CreditCard.strip(number));
+    }.curry(card);
+})();
