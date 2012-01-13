@@ -1,6 +1,6 @@
 // Copyright (c) 2008 Thomas Fuchs
 // http://script.aculo.us/thomas
-// 
+//
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
 // "Software"), to deal in the Software without restriction, including
@@ -8,10 +8,10 @@
 // distribute, sublicense, and/or sell copies of the Software, and to
 // permit persons to whom the Software is furnished to do so, subject to
 // the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be
 // included in all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 // EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 // MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -23,7 +23,7 @@
 // CreditCard.validate('1111 2222 3333 4444') -> true/false
 //   the given string is automatically stripped of whitespace, so it can be
 //   plugged directly into form validations
-// 
+//
 // The following things are tested:
 //   1. does the luhn validation code add up? (see http://en.wikipedia.org/wiki/Luhn_algorithm)
 //   2. does the number range and length seem right? (see http://en.wikipedia.org/wiki/Bank_card_number)
@@ -64,7 +64,7 @@ var CreditCard = {
     return number.gsub(/\s/,'');
   },
   type: function(number) {
-    for(card in CreditCard.CARDS)
+    for(var card in CreditCard.CARDS)
       if(CreditCard['is'+card](number)) return card;
   }
 };
